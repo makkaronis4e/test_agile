@@ -1,0 +1,32 @@
+.main {
+  display: grid;
+  grid-template-rows: fit-content(100%) auto fit-content(100%);
+  min-height: 100vh;
+}
+
+ .header {
+  position: relative;
+ }
+
+ .header.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+ }
+
+ .footer {
+  background-color: #fff;
+  height: 5em;
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  flex-direction: column;
+  color: #666;
+  font-weight: 400;
+ }
+
+ .page-content {
+   background-color: #fff;
+   max-width: 1200px;
+   margin: 20px auto;
+   border-radius: 4px;
+ }

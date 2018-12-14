@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <div class="redactor">
+    <div class="control-panel">
+      <button
+        mat-icon-button
+        color="primary"
+        [disabled]="!selected"
+        (click)="onclick('bold')"
+        [ngClass]="{'pushed': selected && selected.style.fontWeight}">
+        <mat-icon>format_bold</mat-icon>
+      </button>
+      <button
+        mat-icon-button color="primary"
+        [disabled]="!selected"
+        (click)="onclick('italic')"
+        [ngClass]="{'pushed': selected && selected.style.fontStyle}">
+        <mat-icon>format_italic</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="primary"
+        [disabled]="!selected"
+        (click)="onclick('underline')"
+        [ngClass]="{'pushed': selected && selected.style.textDecoration}">
+        <mat-icon>format_underline</mat-icon>
+      </button>
+      <div class="color-picker-block">
+        <input
+          *ngIf="selected"
+          [(colorPicker)]="selected.style.color"
+          [style.background]="selected.style.color"
+          class="color-picker"
+          (colorPickerChange)="onColorChange($event)"/>
+      </div>
+      <button
+        class="synonym-button"
+        mat-button
+        color="primary"
+        (click)="getSynonyme()"
+        [disabled]="!selected">Get synonym
+      </button>
+      <div class="synonyms" *ngIf="synonyms && selected">
+        <span class="synonym" *ngFor="let synonym of synonyms">{{synonym}}</span>
+      </div>
+    </div>
+    <div (click)="onSelect($event)">
+      <div [outerHTML]="text | wrapper "></div>
+    </div>
+  </div>
+</div>
+
