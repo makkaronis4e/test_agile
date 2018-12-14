@@ -10,6 +10,6 @@ synonyms
 
 ## How to run:
 
-run `npm i' and `ng serve` then navigate to `http://localhost:4200/`
+run `npm i` and `ng serve` then navigate to `http://localhost:4200/`
 
 
